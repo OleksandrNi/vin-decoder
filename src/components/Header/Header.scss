@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  background-color: rgba(100, 100, 100, 0.90);
+  width: 100%;
+
+  &__link {
+    box-sizing: border-box;
+    margin-right: 20px;
+    color: rgb(192, 192, 192);
+    font-size: large;
+    text-decoration: none;
+
+    &:hover {
+      color: rgb(220, 200, 30);
+    };
+
+    &:focus {
+      color: rgb(220, 100, 30);
+    };
+  };
+};
