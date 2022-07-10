@@ -1,14 +1,11 @@
 import React, { useCallback, useState, useEffect, } from 'react';
-// import ReactHTMLDatalist from 'react-html-datalist';
 import { getVehicle } from '../api/api';
 import { TableFindVehicle } from './TableFindVehicle';
 import Loader from '../Loader/Loader';
-import './FindVehicle.scss'
-// import DatalistInput from 'react-datalist-input';
-
+import './FindVehicle.scss';
 
 export const FindVehicle = () => {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('');
   const [vehicle, setVehicle] = useState(null);
   const [vehicles, setVehicles] = useState(JSON.parse(localStorage.getItem('vehicles')) || []);
   const [queryError, setQueryError] = useState('');
@@ -17,14 +14,13 @@ export const FindVehicle = () => {
   useEffect(() => {
     localStorage.setItem('vehicles', JSON.stringify(vehicles));
   }, [vehicles]);
-
   
   const onSearchVin = useCallback( async () => {
     let regex = /[^A-Za-z0-9]+/;
 
     if (query.length !== 17 || (regex.test(query))) {
       setQueryError('Check the input, the VIN code consists of 17 characters (only numbers and letters)!');
-      setVehicle('')
+      setVehicle('');
     }
     else {
       setIsLoading(true);
@@ -37,7 +33,7 @@ export const FindVehicle = () => {
         setQueryError('Some thing wrong! Error code: ' + searchResult.Results[4].Value);
         setQuery('');
         setVehicle('');
-      }
+      };
       setIsLoading(false);
     };
   }, [query]);
