@@ -3,7 +3,7 @@ import './Header.scss'
 
 export const Header = () => {
   return (
-    <div className='header'>
+    <div className='container'>
       <nav>
         <Link to='/' className='header__link'>
           Home
