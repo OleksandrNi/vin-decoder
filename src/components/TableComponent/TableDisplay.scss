@@ -1,3 +1,14 @@
-table {
-  width: auto;
+td { 
+  float: left;
+  padding:0;
+  word-wrap: break-word;
+}
+
+.cw-table-list{
+  margin:0px !important;
+  table-layout:fixed;  
+}
+.cw-table-list td{
+  padding-bottom: 0px !important;  
+  overflow:hidden;
 }

@@ -5,7 +5,8 @@ import './TableDisplay.scss'
 export const TableDisplay = ({ columns, results, columnWithLink }) => {
 
   return (
-    <table className='table container'>
+    <div className='table-container'>
+      <table className='table'>
         <thead>
           <tr>
             {columns.map(item => <th key={item}>{item}</th>)}
@@ -23,6 +24,7 @@ export const TableDisplay = ({ columns, results, columnWithLink }) => {
             </tr>
           ))}
         </tbody>
-    </table>
+      </table>
+    </div>
   )
 };
